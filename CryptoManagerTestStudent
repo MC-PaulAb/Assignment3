@@ -1,0 +1,47 @@
+package application;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class CryptoManagerTestStudent {
+CryptoManager manager = new CryptoManager();
+	@BeforeEach
+	void setUp() throws Exception {
+		
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testStringInBounds() {
+		assertFalse(manager.isStringInBounds("{"));
+	}
+
+	@Test
+	public void testEncryptCaesar() {
+		assertTrue(manager.caesarEncryption("A", 1).equals("B"));
+	}
+
+	@Test
+	public void testDecryptCaesar() {
+		assertTrue(manager.caesarDecryption("B", 1).equals("A"));
+	}
+
+	@Test
+	public void testEncryptBellaso() {
+		assertTrue(manager.bellasoEncryption("A","R").equals("S"));
+
+	}
+
+	@Test
+	public void testDecryptBellaso() {
+		assertTrue(manager.bellasoDecryption("S","R").equals("A"));
+
+	}
+}
